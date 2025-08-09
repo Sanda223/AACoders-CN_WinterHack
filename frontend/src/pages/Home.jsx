@@ -1,33 +1,32 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import '../stylesheets/Home.css'
-import Navbar from '../components/Navbar'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../stylesheets/Home.css';
+import Navbar from '../components/Navbar';
 import axios from "axios";
 import Silk from '../components/silk.jsx';
 
-export default function CourseSearch() {
-  const [code, setCode] = useState("");
-  const [degree, setDegree] = useState("");
-  const [university, setUniversity] = useState("");
+export default function Home() {
+  const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    setError("");
+    console.log('Search term:', searchTerm);
+
+
+    if (!searchTerm.trim()) {
+      alert('Please enter a search term');
+      return;
+    }
+
     setLoading(true);
-
     try {
-      const params = new URLSearchParams();
-      if (code) params.append("code", code);
-      if (degree) params.append("degree", degree);
-      if (university) params.append("university", university);
-
-      const response = await axios.get(`/api/courses?${params.toString()}`);
+      const response = await axios.get(`http://localhost:5000/api/courses?query=${encodeURIComponent(searchTerm)}`);
       setResults(response.data);
-    } catch (err) {
-      setError("Failed to fetch courses. Please try again.");
+    } catch (error) {
+      console.error('Error fetching search results:', error);
       setResults([]);
     } finally {
       setLoading(false);
@@ -46,14 +45,18 @@ export default function CourseSearch() {
         />
       </div>
 
-      <Navbar />
+      <Navbar 
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        onSearch={handleSearch}
+      />
 
       <div className="spacing"></div>
 
       <header className="chat-header transparent">
         <div className="chat-header-top">
           <div className="chat-img-box">
-            <img src="../../img/QUT_img.png" alt="Chat Icon"/>
+            <img src="../../img/QUT_img.png" alt="Chat Icon" />
           </div>
           <h1>QUT General Chat</h1>
         </div>
@@ -72,8 +75,24 @@ export default function CourseSearch() {
       </header>
 
       <main className="main-content">
-        
+        {loading && <p>Loading...</p>}
+        {!loading && results.length === 0 && <p>No results found</p>}
+        {/* Results list */}
+        <ul>
+          {results.map((item) => (
+            <li key={(item.UnitCode || '') + (item.DegreeCode || '')}>
+              {item.UnitName
+                ? `Unit: ${item.UnitName} (${item.UnitCode})`
+                : item.DegreeName
+                ? `Degree: ${item.DegreeName}`
+                : item.UniversityName
+                ? `University: ${item.UniversityName}`
+                : "Unknown"}
+            </li>
+          ))}
+        </ul>
       </main>
     </div>
-  )
+  );
 }
+

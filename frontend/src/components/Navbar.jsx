@@ -2,8 +2,9 @@
 import React from 'react'
 import '../stylesheets/Navbar.css'
 import { Link } from 'react-router-dom'
+import SearchBar from './SearchBar'
 
-function Navbar() {
+function Navbar({ searchTerm, setSearchTerm, onSearch }) {
   return (
     <nav className="navbar">
       <Link to="/Home" style={{ textDecoration: 'none' }}>
@@ -11,7 +12,7 @@ function Navbar() {
       </Link>
 
       <div className="nav-center">
-        <input type="text" className="search-input" placeholder="Search..." />
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={onSearch} />
       </div>
 
       <div className="nav-right">

@@ -1,6 +1,6 @@
 // src/Navbar.jsx
 import React from 'react'
-import './Navbar.css'
+import '../stylesheets/Navbar.css'
 
 function Navbar() {
   return (
@@ -14,7 +14,7 @@ function Navbar() {
       </div>
 
       <div className="nav-right">
-        <p>profile</p>
+        <a href="/login">profile</a>
       </div>
     </nav>
   )

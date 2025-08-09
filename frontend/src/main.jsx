@@ -7,6 +7,7 @@ import Login from './pages/Login.jsx'
 import SignUp from './pages/SignUp.jsx'
 import Home from './pages/Home.jsx'
 import DegreeSignup from './pages/DegreeSignup.jsx'
+import CourseDetail from "./CourseDetails.jsx";
 
 function UserDetailsWrapper() {
   const location = useLocation();
@@ -27,6 +28,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/SignUp" element={<SignUp />}/>
         <Route path="/Home" element={<Home />}/>
         <Route path="/DegreeSignup" element={<UserDetailsWrapper />} />
+        <Route path="/courses/:courseCode" element={<CourseDetail />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

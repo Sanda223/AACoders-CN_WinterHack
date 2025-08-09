@@ -4,6 +4,7 @@ import '../stylesheets/Home.css'
 import Navbar from '../components/Navbar'
 import axios from "axios";
 import Silk from '../components/silk.jsx';
+import ShinyText from '../components/ShinyText.jsx';
 
 export default function CourseSearch() {
   const [code, setCode] = useState("");
@@ -62,11 +63,11 @@ export default function CourseSearch() {
             <small className="members">123 members</small>
             <small className="active">
               <span className="active-dot"></span>
-              12 active
+                12 active
             </small>
           </div>
           <Link to="/CreatePost" style={{ textDecoration: 'none' }}>
-            <button className="create-post-button">+ Create Post</button>
+            <button className="create-post-button"><ShinyText text="+ Create Post" disabled={false} speed={3} className='custom-class' /></button>
           </Link>
         </div>
       </header>

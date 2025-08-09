@@ -1,26 +1,34 @@
-// src/Navbar.jsx
-import React from 'react'
-import '../stylesheets/Navbar.css'
+// src/components/Navbar.jsx
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import '../stylesheets/Navbar.css'
+import Sidebar from './Sidebar'
 
-function Navbar() {
+export default function Navbar() {
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen)
+  const closeSidebar = () => setSidebarOpen(false)
+
   return (
-    <nav className="navbar">
-      <Link to="/Home" style={{ textDecoration: 'none' }}>
-        <button className="hamburger-button">&#9776;</button>
-      </Link>
+    <>
+      <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
 
-      <div className="nav-center">
-        <input type="text" className="search-input" placeholder="Search..." />
-      </div>
+      <nav className="navbar">
+        <button className="hamburger-button" onClick={toggleSidebar}>
+          ☰
+        </button>
 
-      <div className="nav-right">
-        <Link to="/Login" style={{ textDecoration: 'none' }}>
-          <button className="login-button">Login</button>
-        </Link>
-      </div>
-    </nav>
+        <div className="nav-center">
+          <input type="text" className="search-input" placeholder="Search..." />
+        </div>
+
+        <div className="nav-right">
+          <Link to="/Login" style={{ textDecoration: 'none' }}>
+            <button className="login-button">Login</button>
+          </Link>
+        </div>
+      </nav>
+    </>
   )
 }
-
-export default Navbar

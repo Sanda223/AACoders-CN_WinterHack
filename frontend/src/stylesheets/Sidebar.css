@@ -1,0 +1,70 @@
+.sidebar {
+  position: fixed;
+  top: 84px; /* start exactly below navbar */
+  left: 0;
+  transform: translateX(-100%);
+  height: calc(100vh - 64px);
+  width: 250px;
+  background-color: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease;
+  z-index: 999; /* LOWER than navbar */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  transform: translateX(0); /* slide into view */
+}
+
+.close-button {
+  align-self: flex-end;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.sidebar-menu li {
+  margin-bottom: 16px;
+}
+
+.sidebar-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.sidebar-menu a:hover {
+  color: #4da6ff;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        top: 64px;
+        height: calc(100vh - 84px);
+        z-index: 999; /* LOWER than navbar */
+        padding: 10px;
+        width: 200px;
+    }
+}

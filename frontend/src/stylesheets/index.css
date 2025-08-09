@@ -51,7 +51,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #0056b3;
+  opacity: 80%
 }
 
 body {

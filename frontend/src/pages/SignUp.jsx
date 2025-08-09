@@ -1,14 +1,18 @@
 import { useState } from 'react'
 import '../stylesheets/Signup.css'
+import axios from 'axios'
 import Navbar from '../components/Navbar'
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     if (!name || !email || !password) {
@@ -17,8 +21,33 @@ export default function Signup() {
     }
 
     setError('')
-    // TODO: Send data to backend
-    alert(`Signed up as:\nName: ${name}\nEmail: ${email}`)
+    setSuccess('')
+
+    try {
+      // Send POST request to backend API
+      const response = await axios.post('http://localhost:5000/api/signup', {
+        name,
+        email,
+        password,
+      })
+      const userID = response.data.userID;
+
+      setSuccess(response.data.message || 'Signup successful!')
+      setName('')
+      setEmail('')
+      setPassword('')
+      alert(`Signing up with:\nName: ${name}\nEmail: ${email}\nPassword: ${'*'.repeat(password.length)}`)
+
+      navigate("/user-details", { state: { userID } });
+
+    } catch (err) {
+      // Handle errors returned from backend
+      if (err.response && err.response.data) {
+        setError(err.response.data.error || 'Signup failed')
+      } else {
+        setError('Signup failed')
+      }
+    }
   }
 
   return (

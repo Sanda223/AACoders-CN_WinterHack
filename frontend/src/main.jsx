@@ -8,6 +8,16 @@ import SignUp from './pages/SignUp.jsx'
 import Home from './pages/Home.jsx'
 import DegreeSignup from './pages/DegreeSignup.jsx'
 
+function UserDetailsWrapper() {
+  const location = useLocation();
+  const { userID } = location.state || {};
+  if (!userID) {
+    return <p>Error: No user ID provided</p>;
+  }
+  return <DegreeSignup userID={userID} />;
+}
+
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
@@ -16,7 +26,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Login" element={<Login />}/>
         <Route path="/SignUp" element={<SignUp />}/>
         <Route path="/Home" element={<Home />}/>
-        <Route path="/DegreeSignup" element={<DegreeSignup />} />
+        <Route path="/DegreeSignup" element={<UserDetailsWrapper />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../stylesheets/App.css'
+import '../stylesheets/Home.css'
 import Navbar from '../components/Navbar'
 
 function App() {
@@ -9,10 +9,24 @@ function App() {
     <div className="app">
       <Navbar />
 
-      {/* Landing Content */}
+      <header className="chat-header">
+        <div className="chat-header-top">
+          <div className="chat-img-box">
+            <img src="../../img/QUT_img.png" alt="Chat Icon"/>
+          </div>
+          <h1>QUT General Chat</h1>
+        </div>
+        <div className="header-info">
+          <small className="members">123 members</small>
+          <small className="active">
+            <span className="active-dot"></span>
+            12 active
+          </small>
+        </div>
+      </header>
+
       <main className="main-content">
-        <h1>Welcome to AA Coders web app!!</h1>
-        <p>This is a simple template to get you started with Vite and React.</p>
+        
       </main>
     </div>
   )

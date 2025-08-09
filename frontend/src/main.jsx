@@ -18,6 +18,7 @@ function UserDetailsWrapper() {
   return <DegreeSignup userID={userID} />;
 }
 
+import CreatePost from './pages/CreatePost.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -29,6 +30,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Home" element={<Home />}/>
         <Route path="/DegreeSignup" element={<UserDetailsWrapper />} />
         <Route path="/courses/:courseCode" element={<CourseDetail />} />
+        <Route path="/CreatePost" element={<CreatePost />}/>
       </Routes>
     </BrowserRouter>
   </StrictMode>

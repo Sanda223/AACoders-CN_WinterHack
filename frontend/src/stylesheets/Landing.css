@@ -19,11 +19,6 @@
   transition: background-color 0.2s ease;
 }
 
-.login-button {
-  background-color: #646cff;
-  color: white;
-}
-
 .signup-button {
   background-color: #e0e0e0;
   color: #333;

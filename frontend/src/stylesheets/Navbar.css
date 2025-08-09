@@ -14,6 +14,10 @@
   color: white;
   border-bottom: 1px solid #444;
   box-sizing: border-box;
+
+  background: rgba(0, 0, 0, 0.3); /* semi-transparent black */
+  backdrop-filter: blur(12px);   /* frosted glass effect */
+  -webkit-backdrop-filter: blur(12px); /* for Safari */
 }
 
 .nav-left,
@@ -64,19 +68,23 @@
   border-radius: 20px;  /* rounder corners */
   border: 1.5px solid #ccc;
   font-size: 16px;      /* slightly larger text */
+  
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  color: white;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   transition: border-color 0.3s ease;
 }
 
 .search-input:focus {
-  border-color: #646cff; /* optional focus color */
+  border-color: #007bff; /* optional focus color */
   outline: none;
 }
 
-
-.profile-pic {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+.login-button {
+  border-radius: 20px;
+  color: white;
+  background-color: #007bff;
 }
 
 /* Responsive adjustments */

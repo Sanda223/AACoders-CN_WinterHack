@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import '../stylesheets/App.css'
+import { Link } from 'react-router-dom'
+import '../stylesheets/Home.css'
 import Navbar from '../components/Navbar'
 import axios from "axios";
+import Silk from '../components/silk.jsx';
 
 export default function CourseSearch() {
   const [code, setCode] = useState("");
@@ -34,12 +36,43 @@ export default function CourseSearch() {
 
   return (
     <div className="app">
+      <div className="silk-background">
+        <Silk
+          speed={5}
+          scale={1}
+          color="#072b5a"
+          noiseIntensity={1.5}
+          rotation={0}
+        />
+      </div>
+
       <Navbar />
 
-      {/* Landing Content */}
+      <div className="spacing"></div>
+
+      <header className="chat-header transparent">
+        <div className="chat-header-top">
+          <div className="chat-img-box">
+            <img src="../../img/QUT_img.png" alt="Chat Icon"/>
+          </div>
+          <h1>QUT General Chat</h1>
+        </div>
+        <div className="header-info-container">
+          <div className="header-info">
+            <small className="members">123 members</small>
+            <small className="active">
+              <span className="active-dot"></span>
+              12 active
+            </small>
+          </div>
+          <Link to="/CreatePost" style={{ textDecoration: 'none' }}>
+            <button className="create-post-button">+ Create Post</button>
+          </Link>
+        </div>
+      </header>
+
       <main className="main-content">
-        <h1>Welcome to AA Coders web app!!</h1>
-        <p>This is a simple template to get you started with Vite and React.</p>
+        
       </main>
     </div>
   )

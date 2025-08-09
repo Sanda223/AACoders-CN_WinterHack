@@ -2,7 +2,11 @@ import { useState } from 'react'
 import '../stylesheets/Signup.css'
 import axios from 'axios'
 import Navbar from '../components/Navbar'
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
+=======
+import Silk from '../components/silk.jsx';
+>>>>>>> f68508749a8aab6c6dda21b98e11dc0b6bc2b9f9
 
 export default function Signup() {
   const [name, setName] = useState('')
@@ -52,11 +56,21 @@ export default function Signup() {
 
   return (
     <div className="app">
+      <div className="silk-background">
+        <Silk
+          speed={5}
+          scale={1}
+          color="#072b5a"
+          noiseIntensity={1.5}
+          rotation={0}
+        />
+      </div>
+
       <Navbar />
 
-      <main className="main-content">
-        <div className="signup-container">
-          <h2>Sign Up</h2>
+      <div className="container-wrapper">
+        <div className="signup-container transparent">
+          <h1>Sign Up</h1>
           <form className="signup-form" onSubmit={handleSubmit}>
             <input
               id="name"
@@ -90,7 +104,7 @@ export default function Signup() {
             <button type="submit">Sign Up</button>
           </form>
         </div>
-      </main>
+        </div>
     </div>
   )
 }

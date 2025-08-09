@@ -77,13 +77,14 @@
 }
 
 .search-input:focus {
-  border-color: #646cff; /* optional focus color */
+  border-color: #007bff; /* optional focus color */
   outline: none;
 }
 
 .login-button {
   border-radius: 20px;
   color: white;
+  background-color: #007bff;
 }
 
 /* Responsive adjustments */

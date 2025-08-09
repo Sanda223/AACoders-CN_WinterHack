@@ -56,7 +56,6 @@ export default function Login() {
 
       <Navbar />
 
-
       <div className="container-wrapper">
         <div className="login-container transparent">
           <h1>Login</h1>

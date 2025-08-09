@@ -74,6 +74,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   align-self: right;
+  margin-bottom: 10px;
 }
 
 .create-post-button:hover {

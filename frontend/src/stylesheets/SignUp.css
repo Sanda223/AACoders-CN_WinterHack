@@ -54,7 +54,7 @@
 
 .signup-form input:focus {
   outline: none;
-  border-color: #646cff;
+  border-color: #007bff;
 }
 
 .signup-form .error {
@@ -64,5 +64,5 @@
 }
 
 .signup-form button:hover {
-  background-color: #4d54e1;
+  background-color: #0056b3;
 }

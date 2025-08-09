@@ -16,7 +16,6 @@ export default function LandingPage() {
         />
       </div>
 
-
       <Navbar />
 
       <main className="main-content landing">

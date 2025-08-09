@@ -2,6 +2,7 @@ import { useState } from 'react'
 import '../stylesheets/Login.css'
 import axios from 'axios'
 import Navbar from '../components/Navbar'
+import Silk from '../components/silk.jsx';
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -43,10 +44,22 @@ export default function Login() {
 
   return (
     <div className="app">
+      <div className="silk-background">
+        <Silk
+          speed={5}
+          scale={1}
+          color="#072b5a"
+          noiseIntensity={1.5}
+          rotation={0}
+        />
+      </div>
+
       <Navbar />
 
-      <main className="main-content">
-        <div className="login-container">
+
+      <div className="container-wrapper">
+        <div className="login-container transparent">
+          <h1>Login</h1>
           <form className="login-form" onSubmit={handleSubmit}>
             <input
               id="email"
@@ -71,7 +84,7 @@ export default function Login() {
             <button type="submit">Log In</button>
           </form>
         </div>
-      </main>
+        </div>
     </div>
   )
 }

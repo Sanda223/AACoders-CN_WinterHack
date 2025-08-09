@@ -13,6 +13,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Wrapper that centers the form */
+.container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
 .transparent {
   background: rgba(0, 0, 0, 0.3); /* semi-transparent black */
   backdrop-filter: blur(12px);   /* frosted glass effect */

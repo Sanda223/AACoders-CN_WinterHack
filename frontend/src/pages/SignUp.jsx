@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import '../stylesheets/Signup.css'
 import Navbar from '../components/Navbar'
+import Silk from '../components/silk.jsx';
 
 export default function Signup() {
   const [name, setName] = useState('')
@@ -23,11 +24,21 @@ export default function Signup() {
 
   return (
     <div className="app">
+      <div className="silk-background">
+        <Silk
+          speed={5}
+          scale={1}
+          color="#072b5a"
+          noiseIntensity={1.5}
+          rotation={0}
+        />
+      </div>
+
       <Navbar />
 
-      <main className="main-content">
-        <div className="signup-container">
-          <h2>Sign Up</h2>
+      <div className="container-wrapper">
+        <div className="signup-container transparent">
+          <h1>Sign Up</h1>
           <form className="signup-form" onSubmit={handleSubmit}>
             <input
               id="name"
@@ -61,7 +72,7 @@ export default function Signup() {
             <button type="submit">Sign Up</button>
           </form>
         </div>
-      </main>
+        </div>
     </div>
   )
 }

@@ -2,7 +2,6 @@
   max-width: 600px;
   width: 90%;
   padding: 48px 32px;
-  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
@@ -19,6 +18,12 @@
   width: 100%; /* Make form fill container's width */
 }
 
+.signup-container h1 {
+  margin-top: 0;
+  margin-bottom: 24px; /* adjust spacing below if needed */
+  font-size: 2rem;      /* optional: control size */
+}
+
 .signup-form input {
   width: 100%;         /* Make inputs full width of the form */
   padding: 18px 18px;
@@ -27,7 +32,12 @@
   border: solid 1px white;
   border-radius: 40px;
   box-sizing: border-box; /* Important to include padding in width */
-  background-color: rgb(245, 245, 245);
+
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  color: white;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: border-color 0.3s ease;
 }
 
 .signup-form button {

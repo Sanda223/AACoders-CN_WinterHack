@@ -13,10 +13,6 @@
   gap: 12px;
 }
 
-.spacing {
-  padding-bottom: 10px;
-}
-
 .chat-header-top {
   display: flex;
   align-items: center;

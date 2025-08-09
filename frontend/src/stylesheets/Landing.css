@@ -3,18 +3,22 @@
   padding-top: 100px; /* to push below navbar */
 }
 
+.landing h1 {
+  font-size: 102px;
+}
+
 .auth-buttons {
-  margin-top: 32px;
+  margin-top: 64px;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
 .auth-button {
-  padding: 12px 24px;
+  padding: 12px 48px;
   font-size: 16px;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 20px;
   font-weight: 600;
   transition: background-color 0.2s ease;
 }
@@ -26,4 +30,37 @@
 
 .auth-button:hover {
   opacity: 0.85;
+}
+
+.intro-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  .landing h1 {
+    font-size: 48px;
+  }
+
+  .auth-buttons {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .auth-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
 }

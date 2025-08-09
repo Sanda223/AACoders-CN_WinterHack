@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import '../stylesheets/Login.css'
 import axios from 'axios'
+import '../stylesheets/Signup.css'
 import Navbar from '../components/Navbar'
 
-export default function Login() {
+export default function Signup() {
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -12,43 +13,60 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    // Simple validation
-    if (!email || !password) {
-      setError('Email and password are required.')
+    if (!name || !email || !password) {
+      setError('All fields are required.')
       return
     }
 
+    // TODO: Send data to backend
     setError('')
     setSuccess('')
-    // TODO: Replace with real authentication
+
     try {
-      const response = await axios.post('http://localhost:5000/api/login', {
+      // Send POST request to backend API
+      const response = await axios.post('http://localhost:5000/api/signup', {
+        name,
         email,
         password,
       })
 
-      setSuccess(response.data.message || 'Login successful!')
+      setSuccess(response.data.message || 'Signup successful!')
+      setName('')
       setEmail('')
       setPassword('')
-       alert(`Logging in with:\nEmail: ${email}\nPassword: ${'*'.repeat(password.length)}`)
 
-    } catch (err) {
+      alert(`Signed up as:\nName: ${name}\nEmail: ${email}`)
+
+      } catch (err) {
+      // Handle errors returned from backend
       if (err.response && err.response.data) {
-        setError(err.response.data.error || 'Login failed')
+        setError(err.response.data.error || 'Signup failed')
       } else {
-        setError('Login failed')
+        setError('Signup failed')
       }
     }
   }
+    
+  
 
   return (
     <div className="app">
       <Navbar />
 
       <main className="main-content">
-        <div className="login-container">
-          <h2>Login</h2>
-          <form className="login-form" onSubmit={handleSubmit}>
+        <div className="signup-container">
+          <h2>Sign Up</h2>
+          <form className="signup-form" onSubmit={handleSubmit}>
+            <label htmlFor="name">Full Name</label>
+            <input
+              id="name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your Name"
+              required
+            />
+
             <label htmlFor="email">Email</label>
             <input
               id="email"
@@ -71,7 +89,7 @@ export default function Login() {
 
             {error && <p className="error">{error}</p>}
 
-            <button type="submit">Log In</button>
+            <button type="submit">Sign Up</button>
           </form>
         </div>
       </main>

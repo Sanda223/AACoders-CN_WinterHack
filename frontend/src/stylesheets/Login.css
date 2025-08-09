@@ -34,10 +34,11 @@
   width: 100%;         /* Make inputs full width of the form */
   padding: 18px 18px;
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border: solid 1px white;
   border-radius: 40px;
   box-sizing: border-box; /* Important to include padding in width */
+  background-color: rgb(245, 245, 245);
 }
 
 .login-form button {

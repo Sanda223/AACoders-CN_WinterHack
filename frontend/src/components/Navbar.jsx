@@ -15,7 +15,9 @@ function Navbar() {
       </div>
 
       <div className="nav-right">
-        <Link to="/Login">Login</Link>
+        <Link to="/Login" style={{ textDecoration: 'none' }}>
+          <button className="login-button">Login</button>
+        </Link>
       </div>
     </nav>
   )

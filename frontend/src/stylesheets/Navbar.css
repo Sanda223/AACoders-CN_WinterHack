@@ -15,15 +15,9 @@
   border-bottom: 1px solid #444;
   box-sizing: border-box;
 
-  background: linear-gradient(270deg, #000000, #072b5a, #000000, #072b5a, #000000);
-  background-size: 1000% 1000%;
-  animation: gradientFlow 20s ease infinite;
-}
-
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  background: rgba(0, 0, 0, 0.3); /* semi-transparent black */
+  backdrop-filter: blur(12px);   /* frosted glass effect */
+  -webkit-backdrop-filter: blur(12px); /* for Safari */
 }
 
 .nav-left,
@@ -74,6 +68,11 @@
   border-radius: 20px;  /* rounder corners */
   border: 1.5px solid #ccc;
   font-size: 16px;      /* slightly larger text */
+  
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  color: white;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   transition: border-color 0.3s ease;
 }
 
@@ -82,11 +81,9 @@
   outline: none;
 }
 
-
-.profile-pic {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+.login-button {
+  border-radius: 20px;
+  color: white;
 }
 
 /* Responsive adjustments */

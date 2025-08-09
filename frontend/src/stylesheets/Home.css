@@ -7,8 +7,11 @@
   margin-left: auto;
   margin-right: auto;    /* center the container horizontally */
   padding-top: 100px;
-  padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
+}
+
+.spacing {
+  padding-bottom: 10px;
 }
 
 .chat-header-top {

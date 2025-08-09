@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="nav-left">
+      <Link to="/Home" style={{ textDecoration: 'none' }}>
         <button className="hamburger-button">&#9776;</button>
-      </div>
+      </Link>
 
       <div className="nav-center">
         <input type="text" className="search-input" placeholder="Search..." />

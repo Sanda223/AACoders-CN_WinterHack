@@ -23,8 +23,9 @@ export default function LandingPage() {
         <h1><ShinyText text="PeerReviewed" disabled={false} speed={3} className='custom-class' /></h1>
         <div className="intro-text-container">
           <p>Your space to connect, collaborate, and chat with students in your university units.</p>
-          <p>Whether you're looking for study partners, help with assignments, or just want to meet others in your course — UnitCircle brings your classmates together in one place.</p>
-          <p>Join a forum for your unit, post questions, share insights, or just say hello. Let's make uni feel a little less solo.</p>
+          <p>Whether you're looking for study partners, help with assignments, or just want to meet others in your course, PeerReviewed brings your classmates together in one place.</p>
+          <p>Join a forum for your unit, post questions, share insights, or just say hello.</p>
+          <p>Let's make uni feel a little less solo.</p>
         </div>
 
         <div className="auth-buttons">

@@ -1,13 +1,16 @@
 .chat-header {
   margin-bottom: 1.5rem;
-  width: 100%;           /* full width */
-  max-width: 900px;      /* wider max width */
-  padding: 0 16px;       /* some horizontal padding */
+  width: 100%;
+  max-width: 900px;
+  padding: 100px 16px 10px; /* top, left/right, bottom */
   box-sizing: border-box;
   margin-left: auto;
-  margin-right: auto;    /* center the container horizontally */
-  padding-top: 100px;
+  margin-right: auto;
   border-bottom: 1px solid #ccc;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .spacing {
@@ -17,7 +20,8 @@
 .chat-header-top {
   display: flex;
   align-items: center;
-  gap: 16px; /* space between image and heading */
+  gap: 16px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .chat-img-box {
@@ -39,8 +43,10 @@
 
 .header-info-container {
   display: flex;
+  flex-wrap: wrap;            /* wrap on smaller viewports */
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
 }
 
 .header-info {
@@ -79,4 +85,27 @@
 
 .create-post-button:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .chat-header-top,
+  .header-info-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .create-post-button {
+    margin-left: 0;
+    width: 100%; /* full width button on small screens */
+  }
+
+  .chat-img-box {
+    width: 72px;
+    height: 72px;
+  }
+
+  .chat-header-top h1 {
+    font-size: 24px;
+    margin-bottom: 0px;
+  }
 }

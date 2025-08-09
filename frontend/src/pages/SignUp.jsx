@@ -2,11 +2,8 @@ import { useState } from 'react'
 import '../stylesheets/Signup.css'
 import axios from 'axios'
 import Navbar from '../components/Navbar'
-<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
-=======
 import Silk from '../components/silk.jsx';
->>>>>>> f68508749a8aab6c6dda21b98e11dc0b6bc2b9f9
 
 export default function Signup() {
   const [name, setName] = useState('')

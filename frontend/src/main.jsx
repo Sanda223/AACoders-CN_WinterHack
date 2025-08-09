@@ -7,7 +7,8 @@ import Login from './pages/Login.jsx'
 import SignUp from './pages/SignUp.jsx'
 import Home from './pages/Home.jsx'
 import DegreeSignup from './pages/DegreeSignup.jsx'
-import CourseDetail from "./CourseDetails.jsx";
+import CourseDetail from "./pages/CourseDetails.jsx";
+import CreatePost from './pages/CreatePost.jsx'
 
 function UserDetailsWrapper() {
   const location = useLocation();
@@ -17,8 +18,6 @@ function UserDetailsWrapper() {
   }
   return <DegreeSignup userID={userID} />;
 }
-
-import CreatePost from './pages/CreatePost.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

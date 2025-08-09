@@ -1,6 +1,7 @@
 // src/Navbar.jsx
 import React from 'react'
 import '../stylesheets/Navbar.css'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -14,7 +15,7 @@ function Navbar() {
       </div>
 
       <div className="nav-right">
-        <a href="/login">profile</a>
+        <Link to="/Login">Login</Link>
       </div>
     </nav>
   )

@@ -72,7 +72,7 @@ export default function ViewPost() {
           <div className="reaction-row">
             <button className="like-btn transparent">👍 {likes}</button>
             <button className="dislike-btn transparent">👎 {dislikes}</button>
-            <button className="reply-btn transparent">Reply</button>
+            <button className="reply-btn transparent"><Link to="/CreateComment">Reply</Link></button>
           </div>
 
           {/* COMMENT SECTION */}

@@ -10,6 +10,7 @@ import DegreeSignup from './pages/DegreeSignup.jsx'
 import CourseDetail from "./pages/CourseDetails.jsx";
 import CreatePost from './pages/CreatePost.jsx'
 import ViewPost from './pages/ViewPost.jsx'
+import CreateComment from './pages/CreateComment.jsx'
 
 function UserDetailsWrapper() {
   const location = useLocation();
@@ -31,6 +32,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/DegreeSignup" element={<UserDetailsWrapper />} />
         <Route path="/CreatePost" element={<CreatePost />}/>
         <Route path="ViewPost" element={<ViewPost />}/>
+        <Route path="CreateComment" element={<CreateComment />}/>
       </Routes>
     </BrowserRouter>
   </StrictMode>

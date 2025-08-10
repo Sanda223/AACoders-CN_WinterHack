@@ -1,5 +1,4 @@
 .chat-header {
-  margin-bottom: 1.5rem;
   width: 100%;
   max-width: 900px;
   padding: 10px 16px 10px; /* top, left/right, bottom */
@@ -89,6 +88,78 @@
 
 .create-post-button:hover {
   background-color: #0056b3;
+}
+
+.recent-posts {
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 16px;
+  margin-top: 0px;
+  color: white;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-item {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  padding: 12px 0;
+  border-bottom: 1px solid #ffffff22;
+}
+
+.post-title {
+  font-weight: 500;
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+  text-decoration: none;
+}
+
+.post-title:hover {
+  text-decoration: underline;
+}
+
+.post-title a {
+  color: white;
+}
+
+.post-title a:hover {
+  opacity: 80%
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-body {
+  font-size: 14px;
+  color: #ccc;
+  margin: 4px 0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.post-author {
+  font-style: italic;
+  font-size: 14px;
+  color: #fff;
+  white-space: nowrap;
 }
 
 @media (max-width: 600px) {

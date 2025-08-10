@@ -7,6 +7,17 @@ export default function ViewPost() {
   const likes = 10;
   const dislikes = 3;
 
+  const comments = [
+    {
+      author: "Alex",
+      text: "I completely agree, this subject is too overloaded this semester.",
+    },
+    {
+      author: "Jordan",
+      text: "There's definitely a lot to juggle, but the content is interesting at least!",
+    },
+  ];
+
 
   return (
     <div className="app">
@@ -62,6 +73,17 @@ export default function ViewPost() {
             <button className="like-btn transparent">👍 {likes}</button>
             <button className="dislike-btn transparent">👎 {dislikes}</button>
             <button className="reply-btn transparent">Reply</button>
+          </div>
+
+          {/* COMMENT SECTION */}
+          <div className="comment-section">
+            <h3 className="comment-heading">Comments</h3>
+            {comments.map((comment, index) => (
+              <div key={index} className="comment transparent">
+                <p className="comment-author">{comment.author}</p>
+                <p className="comment-body">{comment.text}</p>
+              </div>
+            ))}
           </div>
 
         </div>

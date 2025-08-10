@@ -6,7 +6,6 @@
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  border-bottom: 1px solid #444;
 
   display: flex;
   flex-direction: column;
@@ -46,7 +45,6 @@
 }
 
 .post-container {
-  border-radius: 10px;
   max-width: 800px;
   width: 100%;
   padding: 30px;
@@ -120,4 +118,32 @@
 
 .reaction-buttons button:active {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.comment-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comment-heading {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.comment {
+  border-radius: 8px;
+  padding:0px 20px;
+}
+
+.comment-author {
+  font-weight: bold;
+}
+
+.comment-body {
+  font-size: 15px;
+  line-height: 1.6;
 }

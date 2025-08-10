@@ -2,12 +2,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
-
-function Navbar({ searchTerm, setSearchTerm, onSearch }) {
 import '../stylesheets/Navbar.css'
 import Sidebar from './Sidebar'
 
-export default function Navbar() {
+export default function Navbar({ searchTerm, setSearchTerm, onSearch }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen)

@@ -5,8 +5,14 @@ import Navbar from '../components/Navbar';
 import axios from 'axios';
 import Silk from '../components/silk.jsx';
 import ShinyText from '../components/ShinyText.jsx';
+import { useLocation } from 'react-router-dom';
+
 
 export default function GetPosts() {
+  const location = useLocation();
+const isCAB222 = location.pathname === '/Home/CAB222';
+
+
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -49,7 +55,7 @@ export default function GetPosts() {
           <div className="chat-img-box">
             <img src="../../img/QUT_img.png" alt="Chat Icon" />
           </div>
-          <h1>QUT General Chat</h1>
+          <h1>{isCAB222 ? 'CAB222 General Chat' : 'QUT General Chat'}</h1>
         </div>
         <div className="header-info-container">
           <div className="header-info">

@@ -72,6 +72,48 @@ export default function CourseSearch() {
         </div>
       </header>
 
+      <div className="post-section">
+        <section className="recent-posts transparent">
+          <ul className="post-list">
+            {[
+              {
+                title: "CAB402 is cooked",
+                body: "Everyone is struggling with this subject — assignments are brutal and the final exam is harder than expected.",
+              },
+              {
+                title: "Looking for a study group for INB100",
+                body: "Anyone interested in forming a weekly study group to tackle INB100? Preferably weekends or evenings.",
+              },
+              {
+                title: "Tips for surviving the final year at QUT",
+                body: "Final year can be overwhelming. Here are a few tips I wish I knew earlier to help manage your time and stress.",
+              },
+              {
+                title: "Free pizza at GP Library level 4 at 1PM, should be all gone by 3PM so be quick",
+                body: "Student guild is offering free pizza this afternoon. Come early to grab a slice before it’s all gone!",
+              },
+            ].map((post, index) => (
+              <li key={index} className="post-item">
+                <span className="post-title">
+                  <Link to="/ViewPost" style={{ textDecoration: 'none' }}>
+                    {post.title.length > 50 ? post.title.slice(0, 50) + "..." : post.title}
+                  </Link>
+                </span>
+                <div className="post-footer">
+                  <p className="post-body">
+                    {post.body.length > 80 ? post.body.slice(0, 80) + "..." : post.body}
+                  </p>
+                  <span className="post-author">by Sandaru</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+        </section>
+      </div>
+
+
+
       <main className="main-content">
         
       </main>

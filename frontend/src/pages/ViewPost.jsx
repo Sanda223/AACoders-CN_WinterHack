@@ -24,7 +24,7 @@ export default function ViewPost() {
         <div className="spacing"></div>
 
         <div className="top-left-link">
-          <Link to="/">
+          <Link to="/Home">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="28"

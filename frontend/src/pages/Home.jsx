@@ -53,10 +53,10 @@ export default function GetPosts() {
         </div>
         <div className="header-info-container">
           <div className="header-info">
-            <small className="members">123 members</small>
+            <small className="members">20,342 members</small>
             <small className="active">
               <span className="active-dot"></span>
-              12 active
+              175 active
             </small>
           </div>
           <Link to="/CreatePost" style={{ textDecoration: 'none' }}>

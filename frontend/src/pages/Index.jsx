@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import '../stylesheets/Landing.css' // Optional: for custom styling
 import Silk from '../components/silk.jsx';
+import ShinyText from '../components/ShinyText.jsx';
 
 export default function LandingPage() {
   return (
@@ -19,8 +20,13 @@ export default function LandingPage() {
       <Navbar />
 
       <main className="main-content landing">
-        <h1>Landing Page</h1>
-        <p>This is a simple template to get you started with Vite and React.</p>
+        <h1><ShinyText text="PeerReviewed" disabled={false} speed={3} className='custom-class' /></h1>
+        <div className="intro-text-container">
+          <p>Your space to connect, collaborate, and chat with students in your university units.</p>
+          <p>Whether you're looking for study partners, help with assignments, or just want to meet others in your course, PeerReviewed brings your classmates together in one place.</p>
+          <p>Join a forum for your unit, post questions, share insights, or just say hello.</p>
+          <p>Let's make uni feel a little less solo.</p>
+        </div>
 
         <div className="auth-buttons">
           <Link to="/Login" className="auth-button login-button">Login</Link>

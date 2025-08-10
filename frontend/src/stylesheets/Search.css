@@ -1,0 +1,16 @@
+.search-results-box {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.result-link {
+  text-decoration: none;
+  color: #61dafb;
+  transition: color 0.2s;
+}
+
+.result-link:hover {
+  color: #ffffff;
+}

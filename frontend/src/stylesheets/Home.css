@@ -169,6 +169,10 @@
     align-items: flex-start;
   }
 
+  .spacing {
+    padding: 20px;
+  }
+
   .create-post-button {
     margin-left: 0;
     width: 100%; /* full width button on small screens */

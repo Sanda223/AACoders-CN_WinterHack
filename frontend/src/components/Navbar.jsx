@@ -15,9 +15,6 @@ export default function Navbar({ searchTerm, setSearchTerm, onSearch }) {
     <>
       <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
 
-      <div className="nav-center">
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={onSearch} />
-      </div>
       <nav className="navbar">
         <button className="hamburger-button" onClick={toggleSidebar}>
           ☰

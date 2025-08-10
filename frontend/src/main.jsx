@@ -35,6 +35,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/post/:id" element={<ViewPost />} />
         <Route path="/post/:postID/comment" element={<CreateComment />} />
         <Route path="/search" element={<Search />} /> {/* ✅ New route */}
+        <Route path="/Home/CAB222" element={<Home />} />
 
       </Routes>
     </BrowserRouter>

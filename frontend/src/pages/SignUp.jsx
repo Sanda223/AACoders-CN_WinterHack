@@ -4,6 +4,7 @@ import axios from 'axios'
 import Navbar from '../components/Navbar'
 import { useNavigate } from "react-router-dom";
 import Silk from '../components/silk.jsx';
+import '../stylesheets/Search.css'
 
 export default function Signup() {
   const [name, setName] = useState('')

@@ -11,6 +11,7 @@ import CourseDetail from "./pages/CourseDetails.jsx";
 import CreatePost from './pages/CreatePost.jsx'
 import ViewPost from './pages/ViewPost.jsx'
 import CreateComment from './pages/CreateComment.jsx'
+import Search from './pages/Search.jsx'
 
 function UserDetailsWrapper() {
   const location = useLocation();
@@ -33,7 +34,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/CreatePost" element={<CreatePost />}/>
         <Route path="/post/:id" element={<ViewPost />} />
         <Route path="/post/:postID/comment" element={<CreateComment />} />
-
+        <Route path="/search" element={<Search />} /> {/* ✅ New route */}
 
       </Routes>
     </BrowserRouter>

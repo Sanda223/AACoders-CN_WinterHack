@@ -21,7 +21,7 @@ export default function Navbar({ searchTerm, setSearchTerm, onSearch }) {
         </button>
 
         <div className="nav-center">
-          <input type="text" className="search-input" placeholder="Search..." />
+          <SearchBar/>
         </div>
 
         <div className="nav-right">

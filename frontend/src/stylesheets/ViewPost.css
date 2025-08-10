@@ -1,0 +1,99 @@
+.content-container {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+  padding: 10px 16px 10px; /* top, left/right, bottom */
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #444;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spacing {
+  padding: 40px;
+}
+
+.top-left-link {
+  position: absolute;
+  top: 114px;
+  left: 450px;
+  z-index: 10;
+}
+
+.top-left-link a {
+  display: flex; /* Important for aligning SVG + text */
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #000000;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.top-left-link a:hover {
+  background-color: #0b3d7a;
+}
+
+.back-icon {
+  display: block;
+}
+
+.post-container {
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  margin-bottom: 20px;
+}
+
+.post-title {
+  font-size: 28px;
+  margin: 0;
+}
+
+.post-author {
+  font-size: 14px;
+  color: #AAA;
+  margin-top: 5px;
+}
+
+.post-content p {
+  line-height: 1.8;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.reaction-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.like-btn,
+.dislike-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.like-btn:hover {
+  opacity: 80%;
+}
+
+.dislike-btn:hover {
+  opacity: 80%;
+}

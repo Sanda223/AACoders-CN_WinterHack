@@ -8,6 +8,8 @@ import DegreeSignupRoute from "./routes/DegreeSignup.js";
 import GetCoursesRoute from "./routes/GetCourses.js";
 import CourseDetailsRoute from "./routes/CourseDetails.js";
 import CreatePostsRoute from "./routes/CreatePosts.js";
+import GetPostsRoute from "./routes/GetPosts.js";
+import GetPostDetailsRoute from "./routes/GetPostDetails.js";
 
 dotenv.config();
 
@@ -21,7 +23,8 @@ app.use("/api", DegreeSignupRoute);
 app.use("/api", GetCoursesRoute);
 app.use("/api", CreatePostsRoute);
 app.use("/api", CourseDetailsRoute);
-
+app.use("/api", GetPostsRoute);
+app.use("/api", GetPostDetailsRoute);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

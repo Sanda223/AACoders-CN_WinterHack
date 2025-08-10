@@ -80,7 +80,7 @@ export default function GetPosts() {
             {posts.map((post, index) => (
               <li key={post._id || index} className="post-item">
                 <span className="post-title">
-                  <Link to="/ViewPost" style={{ textDecoration: 'none' }}>
+                  <Link to={`/post/${post._id}`} style={{ textDecoration: 'none' }}>
                     {post.title?.length > 50
                       ? post.title.slice(0, 50) + "..."
                       : post.title}

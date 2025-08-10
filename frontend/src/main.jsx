@@ -31,8 +31,9 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Home" element={<Home />}/>
         <Route path="/DegreeSignup" element={<UserDetailsWrapper />} />
         <Route path="/CreatePost" element={<CreatePost />}/>
-        <Route path="ViewPost" element={<ViewPost />}/>
         <Route path="CreateComment" element={<CreateComment />}/>
+        <Route path="/post/:id" element={<ViewPost />} />
+
       </Routes>
     </BrowserRouter>
   </StrictMode>

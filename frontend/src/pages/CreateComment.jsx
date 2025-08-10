@@ -1,30 +1,25 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import '../stylesheets/CreatePost.css';
 import Navbar from '../components/Navbar';
 import Silk from '../components/silk.jsx';
+import '../stylesheets/CreatePost.css';
 
-export default function CreatePost() {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [DegreeCode, setDegreeCode] = useState('');
-  const [CourseCode, setCourseCode] = useState('');
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
-  const [pinned, setPinned] = useState(false);
+export default function CreateComment() {
+  const { postID } = useParams();  // get postID from URL param
+  const [Content, setContent] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const navigate = useNavigate();
-  // Hardcode userID for testing
-  const [userID, setUserID] = useState('ff5f6818-982b-4358-b3e9-790fa4d8be41');
 
+  // Hardcoded userID for testing
+  const UserID = 'ff5f6818-982b-4358-b3e9-790fa4d8be41';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !content || !userID) {
-      setError('All fields are required.');
+    if (!Content) {
+      setError('Comment content is required.');
       return;
     }
 
@@ -32,38 +27,27 @@ export default function CreatePost() {
     setSuccess('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/newPost', {
-        title,
-        content,
-        userID,
-        DegreeCode,
-        CourseCode,
-        likes,
-        dislikes,
-        pinned,
-        createdAt: new Date(),
+      const response = await axios.post('http://localhost:5000/api/newComment', {
+        Content,
+        PostID: postID,
+        UserID: UserID,
+        likes: 0,
+        dislikes: 0,
+        pinned: false,
       });
 
-      setUserID(response.data.userID || '');
-      setSuccess(response.data.message || 'Post created successfully!');
-
-      // Reset form
-      setTitle('');
+      setSuccess(response.data.message || 'Comment created successfully!');
       setContent('');
-      setDegreeCode('');
-      setCourseCode('');
-      setLikes(0);
-      setDislikes(0);
-      setPinned(false);
 
-      alert(`Creating post with:\nTitle: ${title}\nContent: ${content}\nUserID: ${userID}`);
-
-      //navigate("/user-details", { state: { userID: response.data.userID } });
+      // Optionally redirect back to the post details page after success
+      setTimeout(() => {
+        navigate(`/post/${PostID}`);
+      }, 1500);
     } catch (err) {
       if (err.response?.data) {
-        setError(err.response.data.error || 'Post creation failed');
+        setError(err.response.data.error || 'Comment creation failed');
       } else {
-        setError('Post creation failed');
+        setError('Comment creation failed');
       }
     }
   };
@@ -81,13 +65,13 @@ export default function CreatePost() {
           <h2>Add a Comment</h2>
           <textarea
             className="post-textarea"
-            placeholder="What's on your mind?"
-            rows={10}
-            value={content}
+            placeholder="Write your comment here..."
+            rows={6}
+            value={Content}
             onChange={(e) => setContent(e.target.value)}
           />
           <button className="post-button" onClick={handleSubmit}>
-            Post
+            Post Comment
           </button>
           {error && <p className="error">{error}</p>}
           {success && <p className="success">{success}</p>}

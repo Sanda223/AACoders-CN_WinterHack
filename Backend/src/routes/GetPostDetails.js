@@ -18,7 +18,7 @@ router.get("/post/:id", async (req, res) => {
     }
 
     const Comments = await comments
-      .find({ postID: new ObjectId(postId) })
+      .find({ PostID: new ObjectId(postId) })
       .toArray();
 
     res.status(200).json({ ...post, Comments });

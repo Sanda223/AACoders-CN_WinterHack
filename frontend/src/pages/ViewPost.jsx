@@ -69,16 +69,16 @@ export default function ViewPost() {
           <div className="reaction-row">
             <button className="like-btn transparent">👍 {post.likes || 0}</button>
             <button className="dislike-btn transparent">👎 {post.dislikes || 0}</button>
-            <button className="reply-btn transparent"><Link to="/CreateComment">Reply</Link></button>
+            <button className="reply-btn transparent"><Link to={`/post/${post._id}/comment`}>Reply</Link></button>
           </div>
 
           <div className="comment-section">
             <h3 className="comment-heading">Comments</h3>
-            {post.comments && post.comments.length > 0 ? (
-              post.comments.map((comment, idx) => (
+            {post.Comments && post.Comments.length > 0 ? (
+              post.Comments.map((comment, idx) => (
                 <div key={idx} className="comment transparent">
-                  <p className="comment-author">{comment.author || "Anonymous"}</p>
-                  <p className="comment-body">{comment.text}</p>
+
+                  <p className="comment-body">{comment.Content}</p>
                 </div>
               ))
             ) : (

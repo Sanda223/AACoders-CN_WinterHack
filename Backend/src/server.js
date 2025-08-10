@@ -10,6 +10,7 @@ import CourseDetailsRoute from "./routes/CourseDetails.js";
 import CreatePostsRoute from "./routes/CreatePosts.js";
 import GetPostsRoute from "./routes/GetPosts.js";
 import GetPostDetailsRoute from "./routes/GetPostDetails.js";
+import CreateCommentRoute from "./routes/CreateComment.js";
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use("/api", CreatePostsRoute);
 app.use("/api", CourseDetailsRoute);
 app.use("/api", GetPostsRoute);
 app.use("/api", GetPostDetailsRoute);
+app.use("/api", CreateCommentRoute);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

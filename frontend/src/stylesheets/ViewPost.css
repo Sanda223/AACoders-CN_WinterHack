@@ -112,8 +112,12 @@
   gap: 15px;
 }
 
-.reaction-buttons button:hover {
-  background-color: black;
+.like-btn:hover {
+    background-color: black;
+}
+
+.dislike-btn:hover {
+    background-color: black;
 }
 
 .reaction-buttons button:active {

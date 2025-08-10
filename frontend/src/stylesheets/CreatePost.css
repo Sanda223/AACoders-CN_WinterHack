@@ -60,3 +60,23 @@
   margin-bottom: 24px; /* adjust spacing below if needed */
   font-size: 2rem;      /* optional: control size */
 }
+
+.post-title-input {
+  flex: 1;
+  font-size: 1.1rem;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  color: white;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: border-color 0.3s ease;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}

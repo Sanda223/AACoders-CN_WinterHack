@@ -79,7 +79,7 @@ export default function CreatePost() {
       <div className="create-post-wrapper">
         <div className="create-post-container transparent">
           <h2>Create a Post</h2>
-          <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <input className="post-title-input" type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
           <textarea
             className="post-textarea"
             placeholder="What's on your mind?"

@@ -162,7 +162,6 @@
   white-space: nowrap;
 }
 
-
 @media (max-width: 600px) {
   .chat-header-top,
   .header-info-container {

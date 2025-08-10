@@ -58,10 +58,14 @@ export default function ViewPost() {
             </p>
           </div>
 
-          <div className="reaction-buttons">
-            <button className="like-btn">👍 {likes}</button>
-            <button className="dislike-btn">👎 {dislikes}</button>
+          <div className="reaction-row">
+            <div className="reaction-buttons">
+              <button className="like-btn transparent">👍 {likes}</button>
+              <button className="dislike-btn transparent">👎 {dislikes}</button>
+            </div>
+            <button className="reply-btn transparent">Reply</button>
           </div>
+
         </div>
       </div>
 

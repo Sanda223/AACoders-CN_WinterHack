@@ -77,14 +77,14 @@
 .reaction-buttons {
   display: flex;
   gap: 15px;
-  margin-top: 30px;
 }
 
 .like-btn,
-.dislike-btn {
+.dislike-btn,
+.reply-btn {
   padding: 10px 16px;
   border: none;
-  border-radius: px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.2s;
@@ -96,4 +96,23 @@
 
 .dislike-btn:hover {
   opacity: 80%;
+}
+
+.reaction-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reaction-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.reaction-buttons button:hover {
+  background-color: black;
+}
+
+.reaction-buttons button:active {
+  background-color: rgba(255, 255, 255, 0.2);
 }

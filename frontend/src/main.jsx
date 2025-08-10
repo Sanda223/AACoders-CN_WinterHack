@@ -29,10 +29,11 @@ createRoot(document.getElementById('root')).render(
         <Route path="/SignUp" element={<SignUp />}/>
         <Route path="/Home" element={<Home />}/>
         <Route path="/DegreeSignup" element={<UserDetailsWrapper />} />
-        <Route path="/courses/:courseCode" element={<CourseDetail />} />
         <Route path="/CreatePost" element={<CreatePost />}/>
         <Route path="ViewPost" element={<ViewPost />}/>
       </Routes>
     </BrowserRouter>
   </StrictMode>
 )
+
+//<Route path="/courses/:courseCode" element={<CourseDetail />} />

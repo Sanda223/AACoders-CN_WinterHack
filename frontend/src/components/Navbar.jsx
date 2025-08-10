@@ -1,10 +1,11 @@
 // src/components/Navbar.jsx
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import SearchBar from './SearchBar'
 import '../stylesheets/Navbar.css'
 import Sidebar from './Sidebar'
 
-export default function Navbar() {
+export default function Navbar({ searchTerm, setSearchTerm, onSearch }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen)
@@ -14,6 +15,9 @@ export default function Navbar() {
     <>
       <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
 
+      <div className="nav-center">
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={onSearch} />
+      </div>
       <nav className="navbar">
         <button className="hamburger-button" onClick={toggleSidebar}>
           ☰

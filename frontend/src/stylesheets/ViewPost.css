@@ -80,8 +80,7 @@
 }
 
 .like-btn,
-.dislike-btn,
-.reply-btn {
+.dislike-btn {
   padding: 10px 16px;
   border: none;
   border-radius: 6px;
@@ -100,8 +99,14 @@
 
 .reaction-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+/* Use margin-left: auto to push Reply button to the far right */
+.reply-btn {
+  margin-left: auto;
 }
 
 .reaction-buttons {
